@@ -1,0 +1,184 @@
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Horizontal Swipeable Track */
+.work-grid.carousel-track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.work-grid.carousel-track::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.project-card {
+  flex: 0 0 100%; /* Shows 1 full card on mobile, adjust for desktop grid if needed */
+  max-width: 540px;
+  scroll-snap-align: start;
+  overflow: hidden;
+  border: 1px solid rgba(25, 26, 23, 0.16);
+  border-radius: var(--radius, 22px);
+  background: rgba(255, 254, 250, 0.66);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+@media (min-width: 768px) {
+  .project-card {
+    flex: 0 0 calc(50% - 11px); /* 2 cards side by side on desktop */
+  }
+}
+
+/* Real Image Visual Container */
+.project-visual.image-visual {
+  height: 260px;
+  padding: 0;
+  background: var(--paper-deep, #e8e7df);
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.03);
+}
+
+/* Faint Side Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 254, 250, 0.7);
+  border: 1px solid rgba(25, 26, 23, 0.15);
+  color: var(--ink, #191a17);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0.4;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  opacity: 1;
+  background: rgba(255, 254, 250, 0.95);
+}
+
+.carousel-arrow-left {
+  left: -20px;
+}
+
+.carousel-arrow-right {
+  right: -20px;
+}
+
+@media (max-width: 760px) {
+  .carousel-arrow {
+    display: none; /* Hide side arrows on small mobile screens where native touch swipe shines */
+  }
+}
+
+/* Indicator Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(25, 26, 23, 0.2);
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.dot.active {
+  background: var(--ink, #191a17);
+  transform: scale(1.25);
+}
+
+/* Rest of standard meta layout styles */
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 14px;
+  padding: 23px;
+}
+
+.project-meta h3 {
+  margin-top: 0;
+  margin-bottom: 7px;
+  font-size: 1.25rem;
+  letter-spacing: -0.035em;
+  color: var(--ink, #191a17);
+}
+
+.project-meta p {
+  max-width: 390px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: var(--muted, #6c6e65);
+  font-size: 0.91rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag {
+  padding: 5px 9px;
+  border: 1px solid rgba(25, 26, 23, 0.16);
+  border-radius: 99px;
+  color: #53554d;
+  font-size: 0.72rem;
+}
+
+.project-arrow {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(25, 26, 23, 0.16);
+  border-radius: 50%;
+  color: var(--ink, #191a17);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.project-card:hover .project-arrow {
+  background: var(--accent, #c7f36a);
+  transform: rotate(45deg);
+}

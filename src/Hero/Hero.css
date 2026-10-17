@@ -1,0 +1,243 @@
+:root {
+    --ink: #191a17;
+    --muted: #6c6e65;
+    --white: #fffefa;
+    --accent: #c7f36a;
+    --accent-dark: #9bc642;
+    --ease: cubic-bezier(.22, .8, .25, 1);
+  }
+  
+  .hero {
+    min-height: min(790px, calc(100svh - 72px));
+    display: grid;
+    align-items: center;
+    padding-block: 145px 95px;
+    position: relative;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(220px, .6fr);
+    gap: 50px;
+    align-items: center;
+  }
+  
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: currentColor;
+  }
+  
+  h1 {
+    max-width: 760px;
+    margin: 0 0 25px 0;
+    font-size: clamp(3.25rem, 8vw, 7.2rem);
+    font-weight: 650;
+    letter-spacing: -.085em;
+    line-height: .98;
+  }
+  
+  .highlight {
+    position: relative;
+    z-index: 0;
+    white-space: nowrap;
+  }
+  
+  .highlight::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -.025em;
+    right: -.045em;
+    bottom: .04em;
+    height: .32em;
+    background: var(--accent);
+    border-radius: 5px;
+    transform: rotate(-1.5deg);
+  }
+  
+  .hero-copy {
+    max-width: 540px;
+    margin: 0 0 29px 0;
+    color: var(--muted);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.55;
+  }
+  
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 18px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font-size: .9rem;
+    font-weight: 650;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .2s var(--ease), background .2s ease;
+  }
+  
+  .button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .button-primary {
+    background: var(--ink);
+    color: var(--white);
+  }
+  
+  .button-primary:hover {
+    background: #30312b;
+  }
+  
+  .button-secondary {
+    background: transparent;
+    color: var(--ink);
+  }
+  
+  .button-secondary:hover {
+    background: var(--white);
+  }
+  
+  .button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Graphic and Orbit Animation */
+  .idea-art {
+    min-height: 330px;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  
+  .idea-orbit {
+    width: min(300px, 24vw);
+    aspect-ratio: 1;
+    min-width: 215px;
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  
+  .orbit-ring {
+    position: absolute;
+    inset: 8%;
+    border: 1px solid rgba(25, 26, 23, .22);
+    border-radius: 50%;
+  }
+  
+  .orbit-ring.ring-two {
+    inset: -2%;
+    border-style: dashed;
+    opacity: .55;
+    transform: rotate(-20deg);
+  }
+  
+  .bulb-disc {
+    width: 58%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 22px 65px rgba(155, 198, 66, .22);
+    animation: float 5.5s ease-in-out infinite;
+  }
+  
+  .bulb-disc svg {
+    width: 44%;
+    height: 44%;
+  }
+  
+  .orbit-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  
+  .orbit-dot.dot-one {
+    top: 13%;
+    right: 12%;
+  }
+  
+  .orbit-dot.dot-two {
+    bottom: 14%;
+    left: 8%;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-dark);
+  }
+  
+  .art-caption {
+    position: absolute;
+    right: 0;
+    bottom: 2%;
+    color: var(--muted);
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-9px) rotate(2deg); }
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 760px) {
+    .hero {
+      min-height: auto;
+      padding-block: 90px 75px;
+    }
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    h1 {
+      font-size: clamp(3.2rem, 15vw, 6rem);
+    }
+    .idea-art {
+      min-height: 225px;
+      margin-top: 5px;
+    }
+    .idea-orbit {
+      width: 210px;
+      min-width: 0;
+    }
+    .art-caption {
+      right: 8%;
+      bottom: 0;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .hero-actions .button {
+      width: 100%;
+    }
+  }

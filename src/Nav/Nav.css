@@ -1,0 +1,81 @@
+.dock-wrap {
+  position: fixed;
+  z-index: 20;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 28px);
+}
+
+.dock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px;
+  border: 1px solid rgba(25, 26, 23, 0.18);
+  border-radius: 999px;
+  background: rgba(250, 249, 244, 0.86);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 9px 28px rgba(25, 26, 23, 0.08);
+}
+
+.dock-link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: #55574f;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.dock-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dock-link:hover {
+  background: #e8e7df;
+  color: #191a17;
+  transform: translateY(-2px);
+}
+
+.dock-link[aria-current='location'] {
+  background: #c7f36a;
+  color: #191a17;
+  border-color: rgba(25, 26, 23, 0.1);
+}
+
+.dock-link .tooltip {
+  position: absolute;
+  top: calc(100% + 11px);
+  left: 50%;
+  transform: translate(-50%, -4px);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #191a17;
+  color: #fffefa;
+  font-size: 0.72rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.dock-link:hover .tooltip,
+.dock-link:focus-visible .tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

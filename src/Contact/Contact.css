@@ -1,0 +1,101 @@
+.contact-section {
+  padding-bottom: 75px;
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: end;
+  padding: clamp(28px, 6vw, 62px);
+  border-radius: 28px;
+  background: var(--ink, #191a17);
+  color: var(--white, #fffefa);
+}
+
+.contact-card::after {
+  content: '';
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: 14%;
+  top: -155px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 28px rgba(255, 255, 255, 0.035),
+    0 0 0 58px rgba(255, 255, 255, 0.025);
+  pointer-events: none;
+}
+
+.contact-card .section-index {
+  color: #bfc0b6;
+}
+
+.contact-card h2 {
+  max-width: 650px;
+  margin-top: 9px;
+  margin-bottom: 20px;
+  color: var(--white, #fffefa);
+}
+
+.contact-card p {
+  max-width: 470px;
+  margin: 0;
+  color: #c4c5bb;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.contact-card .button {
+  position: relative;
+  z-index: 1;
+  background: var(--accent, #c7f36a);
+  border-color: var(--accent, #c7f36a);
+  color: var(--ink, #191a17);
+  white-space: nowrap;
+}
+
+.contact-card .button:hover {
+  background: #d6fa91;
+  transform: translateY(-3px);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 0 35px;
+  border-top: 1px solid rgba(25, 26, 23, 0.16);
+  color: var(--muted, #6c6e65);
+  font-size: 0.8rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--ink, #191a17);
+}
+
+@media (max-width: 760px) {
+  .contact-card {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .contact-card .button {
+    width: fit-content;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
