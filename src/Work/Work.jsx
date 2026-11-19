@@ -38,8 +38,10 @@ export default function Work() {
     const container = scrollContainerRef.current;
     const stepWidth = getStepWidth();
     if (container && stepWidth) {
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth);
+      const targetLeft = Math.min(stepWidth * clamped, maxScroll);
       container.scrollTo({
-        left: stepWidth * clamped,
+        left: targetLeft,
         behavior: 'smooth',
       });
     }
@@ -149,7 +151,7 @@ export default function Work() {
           disabled={currentIndex === projects.length - 1}
           aria-label='Next slide'
         >
-          <svg viewBox='0 0 24 24' width='20' height='16' fill='none'>
+          <svg viewBox='0 0 24 24' width='20' height='20' fill='none'>
             <path
               d='M9 18l6-6-6-6'
               stroke='currentColor'
