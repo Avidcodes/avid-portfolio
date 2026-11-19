@@ -5,7 +5,7 @@ export default function Hero() {
     <section className='hero' id='home' data-section>
       <div className='hero-grid'>
         <div className='reveal is-visible'>
-          <p className='eyebrow'>{`Adetunji Tomiwa Shoaga >>> <AVID> `}</p>
+          <p className='eyebrow'>{`Adetunji Tomiwa Shoaga >>> <AVID>`}</p>
           <h1>
             Ideas are nice.
             <br />
@@ -14,8 +14,9 @@ export default function Hero() {
             real is better.
           </h1>
           <p className='hero-copy'>
-            I'm Tomiwa — a Computer Science Student interested in how thoughtful
-            design and software come together to make useful things.
+            I&apos;m Tomiwa, a Computer Science undergraduate building backend
+            systems and APIs in Go, backed by a solid foundation in frontend
+            development.
           </p>
           <div className='hero-actions'>
             <a className='button button-primary' href='#work'>
@@ -31,7 +32,7 @@ export default function Hero() {
               </svg>
             </a>
             <a className='button button-secondary' href='#contact'>
-              Say something
+              Get in touch
             </a>
           </div>
         </div>
@@ -62,7 +63,7 @@ export default function Hero() {
             <span className='orbit-dot dot-one'></span>
             <span className='orbit-dot dot-two'></span>
           </div>
-          <span className='art-caption'> Curiosity → creation</span>
+          <span className='art-caption'>Curiosity → execution</span>
         </div>
       </div>
     </section>
