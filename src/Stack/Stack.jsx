@@ -1,39 +1,39 @@
 import './Stack.css';
 
 export default function Stack() {
-  const currentlyUse = [
-    { label: 'Core & Markup', items: ['HTML', 'CSS'] },
-    { label: 'Languages', items: ['JavaScript'] },
-    { label: 'Frontend & UI', items: ['React', 'Tailwind CSS'] },
-    { label: 'Forms & Validation', items: ['React Hook Form', 'Zod'] },
+  const activeFoundation = [
+    {
+      role: 'Frontend & UI',
+      summary: 'Interactive interfaces and responsive layouts.',
+      tools: ['React', 'JavaScript', 'Tailwind CSS'],
+    },
+    {
+      role: 'Markup & Styling',
+      summary: 'Semantic structure, CSS variables, and layout systems.',
+      tools: ['HTML', 'CSS'],
+    },
+    {
+      role: 'Source Control',
+      summary: 'Branching, commits, and collaborative workflows.',
+      tools: ['Git', 'GitHub'],
+    },
   ];
 
-  const intendToWield = [
-    { label: 'Languages & Core', items: ['TypeScript', 'C#', 'SQL'] },
-    { label: 'Frameworks', items: ['Next.js'] },
+  const buildingInto = [
     {
-      label: 'State & data fetching',
-      items: ['Context API', 'TanStack Query', 'Zustand when needed'],
-    },
-    { label: 'Backend', items: ['ASP.NET Core'] },
-    { label: 'Database', items: ['PostgreSQL'] },
-    { label: 'ORM', items: ['Entity Framework Core'] },
-    {
-      label: 'Authentication',
-      items: ['ASP.NET Core Identity', 'OAuth/OIDC where appropriate'],
+      role: 'Backend & Systems',
+      summary: 'Services, concurrency basics, and Linux environments.',
+      tools: ['Go (Golang)', 'Linux'],
     },
     {
-      label: 'Testing',
-      items: ['Vitest', 'React Testing Library', 'Playwright', 'xUnit'],
+      role: 'Database & Queries',
+      summary: 'Relational schemas, joins, and query fundamentals.',
+      tools: ['PostgreSQL', 'SQL'],
     },
-    { label: 'API tools', items: ['Postman', 'OpenAPI/Swagger'] },
-    { label: 'Version control', items: ['Git', 'GitHub'] },
-    { label: 'CI/CD', items: ['GitHub Actions'] },
-    { label: 'Containers', items: ['Docker'] },
-    { label: 'Cloud', items: ['Azure or AWS'] },
     {
-      label: 'Advanced systems',
-      items: ['Redis', 'RabbitMQ', 'Kafka', 'Kubernetes', 'OpenTelemetry'],
+      role: 'Typed Frontend & Runtime',
+      summary: 'Stricter frontend contracts and containerized runs.',
+      tools: ['TypeScript', 'Docker'],
     },
   ];
 
@@ -41,46 +41,69 @@ export default function Stack() {
     <section className='section' id='stack' data-section>
       <div className='section-heading reveal is-visible'>
         <div>
-          <span className='section-index'>Tools & interests / 03</span>
-          <h2>Tools I use... and Intend to Wield</h2>
+          <span className='section-index'>STACK / 03</span>
+          <h2>
+            Current base.
+            <br />
+            Backend next.
+          </h2>
         </div>
         <p className='section-intro'>
-          A clear snapshot of my active foundation and the production-grade
-          ecosystem I'm stepping into next.
+          Frontend tools I ship with today, paired with the backend and systems
+          stack I am building into.
         </p>
       </div>
 
-      <div className='stack-container'>
-        {/* Currently Section */}
-        <div className='stack-phase'>
-          <h3 className='stack-phase-title'>Currently</h3>
-          <div className='stack-groups'>
-            {currentlyUse.map((category, index) => (
-              <div className='stack-group' key={index}>
-                <span className='stack-label'>{category.label}</span>
-                <div className='stack-items'>
-                  {category.items.map((item, itemIndex) => (
-                    <span key={itemIndex}>{item}</span>
+      <div className='stack-grid'>
+        <div className='stack-column'>
+          <div className='stack-column-head'>
+            <span className='stack-dot stack-dot--muted' aria-hidden='true' />
+            <h3>Active Foundation</h3>
+          </div>
+
+          <div className='stack-cards'>
+            {activeFoundation.map((group) => (
+              <article className='stack-card' key={group.role}>
+                <div className='stack-card-top'>
+                  <h4>{group.role}</h4>
+                  <p>{group.summary}</p>
+                </div>
+                <div className='stack-pills'>
+                  {group.tools.map((tool) => (
+                    <span className='stack-pill' key={tool}>
+                      {tool}
+                    </span>
                   ))}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
 
-        {/* Intend to Wield Section */}
-        <div className='stack-phase'>
-          <h3 className='stack-phase-title'>Intend to Wield</h3>
-          <div className='stack-groups'>
-            {intendToWield.map((category, index) => (
-              <div className='stack-group' key={index}>
-                <span className='stack-label'>{category.label}</span>
-                <div className='stack-items'>
-                  {category.items.map((item, itemIndex) => (
-                    <span key={itemIndex}>{item}</span>
+        <div className='stack-column'>
+          <div className='stack-column-head'>
+            <span className='stack-dot stack-dot--accent' aria-hidden='true' />
+            <h3>Building Into</h3>
+          </div>
+
+          <div className='stack-cards'>
+            {buildingInto.map((group) => (
+              <article className='stack-card stack-card--focus' key={group.role}>
+                <div className='stack-card-top'>
+                  <h4>{group.role}</h4>
+                  <p>{group.summary}</p>
+                </div>
+                <div className='stack-pills'>
+                  {group.tools.map((tool) => (
+                    <span
+                      className='stack-pill stack-pill--accent'
+                      key={tool}
+                    >
+                      {tool}
+                    </span>
                   ))}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
