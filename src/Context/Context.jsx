@@ -5,16 +5,16 @@ export default function Context() {
     <section className='section' id='about' data-section>
       <div className='section-heading reveal is-visible'>
         <div>
-          <span className='section-index'>SNEAK PEAK / 01</span>
+          <span className='section-index'>ABOUT / 01</span>
           <h2>
-            Still learning.
+            First principles.
             <br />
-            Always exploring.
+            Backend systems.
           </h2>
         </div>
         <p className='section-intro'>
-          I like understanding how things work, then putting that understanding
-          to use where and when needed.
+          I focus on understanding how software works under the hood, then
+          building reliable systems from the ground up.
         </p>
       </div>
 
@@ -36,27 +36,27 @@ export default function Context() {
             />
           </svg>
           <p>
-            Good work doesn't need to shout. It needs care, clarity, and a
+            Good work doesn&apos;t need to shout. It needs care, clarity, and a
             reason to exist.
           </p>
         </div>
 
         <div className='about-text reveal is-visible'>
           <p>
-            I'm studying Computer Science and building my understanding one
-            concept at a time, from the interfaces people interact with to the
-            logic working behind them.
+            I&apos;m a Computer Science undergraduate specializing in backend
+            engineering with Go (Golang), backed by hands-on experience shipping
+            production React interfaces.
           </p>
           <p>
             I value{' '}
             <strong>
-              clear thinking, consistency, and practical learning.
+              clear architecture, direct code, and first-principles engineering.
             </strong>{' '}
-            I enjoy the process of taking an idea, working through the details,
-            and gradually turning it into something real.
+            Instead of relying on black-box abstractions, I build APIs, data
+            models, and server-side logic by understanding every layer.
           </p>
           <p>
-            This site is a living snapshot of that process. It'll grow as I do.
+            This portfolio tracks my work as I build deeper backend systems.
           </p>
         </div>
       </div>
