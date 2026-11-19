@@ -29,9 +29,8 @@ export default function Nav() {
 
     sections.forEach((section) => sectionObserver.observe(section));
 
-    // Cleanup observer on unmount
     return () => {
-      sections.forEach((section) => sectionObserver.unobserve(section));
+      sectionObserver.disconnect();
     };
   }, []);
 
@@ -54,6 +53,24 @@ export default function Nav() {
             />
           </svg>
           <span className='tooltip'>Home</span>
+        </a>
+        <a className='dock-link' href='#about' aria-label='About'>
+          <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'>
+            <circle
+              cx='12'
+              cy='12'
+              r='9'
+              stroke='currentColor'
+              strokeWidth='1.6'
+            />
+            <path
+              d='M12 11v5M12 8h.01'
+              stroke='currentColor'
+              strokeWidth='1.8'
+              strokeLinecap='round'
+            />
+          </svg>
+          <span className='tooltip'>About</span>
         </a>
         <a className='dock-link' href='#work' aria-label='Work'>
           <svg viewBox='0 0 24 24' fill='none' aria-hidden='true'>
