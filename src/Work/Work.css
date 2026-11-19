@@ -22,7 +22,7 @@
 }
 
 .project-card {
-  flex: 0 0 100%; /* Shows 1 full card on mobile, adjust for desktop grid if needed */
+  flex: 0 0 100%; /* Shows 1 full card on mobile */
   max-width: 540px;
   scroll-snap-align: start;
   overflow: hidden;
@@ -37,6 +37,7 @@
 @media (min-width: 768px) {
   .project-card {
     flex: 0 0 calc(50% - 11px); /* 2 cards side by side on desktop */
+    max-width: none;
   }
 }
 
@@ -80,9 +81,15 @@
     background 0.2s ease;
 }
 
-.carousel-arrow:hover {
+.carousel-arrow:hover:not(:disabled) {
   opacity: 1;
   background: rgba(255, 254, 250, 0.95);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.15;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .carousel-arrow-left {
