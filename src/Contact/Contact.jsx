@@ -2,13 +2,7 @@ import { useEffect } from 'react';
 import './Contact.css';
 
 export default function Contact() {
-  useEffect(() => {
-    // Automatically set the current year in the footer
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -16,10 +10,10 @@ export default function Contact() {
         <div className='contact-card reveal is-visible'>
           <div>
             <span className='section-index'>Have something in mind?</span>
-            <h2>Good things start with a conversation.</h2>
+            <h2>Start a conversation.</h2>
             <p>
-              For collaborations, questions, or just connecting with someone who
-              enjoys learning and building.
+              Open to backend roles, internships, collaborations, and technical
+              discussions.
             </p>
           </div>
           <a className='button' href='mailto:adextommy008@gmail.com'>
@@ -44,9 +38,7 @@ export default function Contact() {
       </section>
 
       <footer>
-        <span>
-          © <span id='year'></span> Adetunji Tomiwa Shoaga
-        </span>
+        <span>© {currentYear} Adetunji Tomiwa Shoaga</span>
         <div className='footer-links'>
           <a href='#home'>Back to top ↑</a>
           <a
